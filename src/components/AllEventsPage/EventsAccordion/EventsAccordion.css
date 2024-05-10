@@ -259,7 +259,23 @@
 
 
 @media screen and (min-width: 360px) and (max-width: 768px) {
-    .footer {
-        height: 141px;
+    .events-accordion_tab__name {
+        font-size: 1.125rem;
+        font-weight: 600;
     }
+    
+    .events-accordion_tab__number {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin: 0 16px;
+    }
+
+    .events-accordion_item__digit {
+        font-size: 5rem;
+        font-weight: 600;
+        line-height: 5rem;
+        top: 0;
+        left: unset;
+        right: -5%;
+        }
 }
