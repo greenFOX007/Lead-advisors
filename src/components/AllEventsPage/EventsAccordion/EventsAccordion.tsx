@@ -64,11 +64,13 @@ export default function EventsAccordion() {
   ];
 
   useEffect(() => {
-    const accordion = document.querySelector(".accordion");
-    toggleAccordion(document.querySelector(".accordion"));
+    const accordion: HTMLDivElement | null =
+      document.querySelector(".accordion");
+    toggleAccordion(accordion);
     if (accordion) {
-      accordion.addEventListener("click", (e) => {
-        const activePanel = e.target.closest(".accordion-panel");
+      accordion.addEventListener("click", (e: MouseEvent) => {
+        const target = e.target as HTMLElement | null;
+        const activePanel = target?.closest(".accordion-panel");
         if (!activePanel) return;
         toggleAccordion(activePanel);
       });
