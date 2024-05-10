@@ -1,0 +1,24 @@
+.header-container{
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+@media screen and (max-width: 1024px) {
+    .header-container {
+        padding-top: 100px;
+    }
+    
+}
+
+
+@media screen and (min-width: 360px) and (max-width:768px) {
+    .header-container {
+        padding-top: 80px;
+    }
+    
+    .header-logo_img{
+        width: 128px;
+    }
+
+}

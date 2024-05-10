@@ -1,0 +1,26 @@
+.hero-btn{
+    display: flex;
+    align-items: center;
+    max-width: max-content;
+    background-color: #1D4169;
+    padding: 16px 28px;
+    border-radius: 40px;
+    color: #fff;
+    font-size: 1.125rem;
+    text-decoration: none;
+}
+
+.hero-btn_text{
+    margin-right: 30px;
+    
+}
+
+.hero-btn_arrow{
+    transition: all .3s ease;   
+}
+
+.hero-btn:hover .hero-btn_arrow {
+    transform: translateX(-15px);
+}
+
+

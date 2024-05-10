@@ -1,0 +1,70 @@
+.timer{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 72px;
+}
+
+.timer_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.digit,.digit-separator{
+    font-size: 4.5rem;
+    font-weight: 600;
+    color: var(--main-blue);
+}
+
+.timer-digit{
+    min-width: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.timer-label{
+    width: 100%;
+    min-height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 1rem;
+    background-image: url('../../assets/labelBack.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@media screen and (max-width: 1024px) {
+
+    .timer {
+        margin-bottom: 40px;
+    }
+
+    .digit,.digit-separator {
+        font-size: 2.25rem;
+    }
+
+    .timer-label {
+        min-height: 40px;
+        font-size: 0.75rem;
+        background-image: url('../../assets/label-small.svg');
+        background-size: contain;
+    }
+
+    .timer-digit {
+        min-width: 64px;
+    }
+}
+
+
+@media screen and (min-width: 360px) and (max-width: 768px) {
+
+    .timer-label { 
+        min-height: 40px;
+        font-size: 0.75rem;
+        background-image: url('../../assets/label-small.svg');
+        background-size: contain;
+    }
+}

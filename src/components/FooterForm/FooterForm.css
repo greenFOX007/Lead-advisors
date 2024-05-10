@@ -1,0 +1,133 @@
+.footer-form_container{
+    background-color: #fff;
+    min-width: 440px;
+    border-radius: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.footer-form_input{
+    min-width: 350px;
+    outline: none;
+    border: none;
+    border-radius: 40px;
+    background-color: transparent;
+    color: rgba(0, 0, 0, .6);
+    font-size: 1.125rem;
+    padding: 16px 0 16px 27px;
+
+}
+
+
+.footer-form_input::placeholder{
+    color: rgba(0, 0, 0, .6);
+    font-size: 1.125rem;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    transition: background-color 5000s ease-in-out 0s, color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: initial;
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
+    box-shadow: 0 0 0px 1000px white inset !important;
+}
+
+.footer-form_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43px;
+    height: 43px;
+    background-color: var(--main-red);
+    border: none;
+    border-radius: 50%;
+    outline: none;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: all .3s linear;
+    padding: 0;
+}
+
+.footer-form_btn:hover {
+    transform: translateX(-5px);
+}
+
+.err-msg{
+    position: absolute;
+    bottom: -40%;
+    left: 2%;
+    font-size: 1rem;
+    color: red;
+}
+
+.loader {
+    width: 37px;
+    height: 37px;
+    border: 5px solid #6ebeff;
+    border-bottom-color: #337AB7;
+    border-radius: 50%;
+    display: block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .footer-form_container { 
+        min-width: 360px;
+    }  
+
+    .footer-form_input {
+        min-width: 300px;
+        font-size: 0.875rem;
+        padding: 13px 0 13px 20px;
+    }
+    .footer-form_input::placeholder {
+        font-size: 0.875rem;
+    }
+
+    .footer-form_btn {
+        width: 33px;
+        height: 33px;
+    }
+
+    .loader {
+        width: 27px;
+        height: 27px;
+    }
+    .err-msg {
+        font-size: 0.875rem;
+    }
+}
+
+
+@media screen and (min-width: 360px) and (max-width: 768px) {
+    .footer-form_container {
+        min-width: 280px;
+    }
+
+    .footer-form_input {
+        min-width: 230px;
+        font-size: 0.875rem;
+        padding: 13px 0 13px 10px;
+    }
+    .footer-form_input::placeholder {
+        font-size: 0.8rem;
+    }
+    .err-msg {
+        font-size: 0.875rem;
+    }
+}

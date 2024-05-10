@@ -1,0 +1,51 @@
+.footer{
+    display: flex;
+    height: 192px;
+    background-color: var(--main-blue);
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.footer_form-container{
+    background-color: white;
+    border-radius: 30px;
+    height: 60px;
+    width: 440px;
+}
+
+.other-events-btn{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 1.25rem;
+    right: 5%;
+    cursor: pointer;
+}
+
+.other-events-btn_text{
+    margin-right: 5px;
+}
+
+
+@media screen and (max-width: 1024px) {
+    .footer {  
+        height: 160px;
+    }
+
+    .other-events-btn {
+       right: unset;
+       bottom: 10%;
+    }
+
+    
+}
+
+
+@media screen and (min-width: 360px) and (max-width: 768px) {
+    .footer {
+        height: 141px;
+    }
+}

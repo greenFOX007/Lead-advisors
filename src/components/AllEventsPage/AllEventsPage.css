@@ -1,0 +1,28 @@
+.all-events_container {
+    min-height: 100vh;
+    padding-top: 110px;
+}
+
+.all-events_title{
+    font-size: 4.5rem;
+    font-weight: bold;
+    color: rgba(22, 44, 78, .39);
+    margin-top: 0;
+    text-align: center;
+}
+
+@media screen and (max-width: 1024px) {
+    .all-events_title {
+        font-size: 2.25rem;
+    }
+
+    .all-events_container {
+        padding-top: 45px;
+    }
+}
+
+@media screen and (min-width: 360px) and (max-width: 768px) {
+    .footer {
+        height: 141px;
+    }
+}
