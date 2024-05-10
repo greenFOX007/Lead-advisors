@@ -22,108 +22,115 @@ export default function EventsAccordion() {
     {
       date: "01.02.23",
       linkUrl: "http://google.com/",
-      name: "Hawaiian party",
+      name: "Мafia party",
       photo: img,
     },
     {
       date: "01.02.23",
       linkUrl: "http://google.com/",
-      name: "Hawaiian party",
+      name: "Party",
       photo: img,
     },
     {
       date: "01.02.23",
       linkUrl: "http://google.com/",
-      name: "Hawaiian party",
+      name: "Party on the beach",
       photo: img,
     },
     {
       date: "01.02.23",
       linkUrl: "http://google.com/",
-      name: "Hawaiian party",
+      name: "Home Security",
       photo: img,
     },
     {
       date: "01.02.23",
       linkUrl: "http://google.com/",
-      name: "Hawaiian party",
+      name: "Network Design & Implementation",
       photo: img,
     },
     {
       date: "01.02.23",
       linkUrl: "http://google.com/",
-      name: "Hawaiian party",
+      name: "System Design & Engineering",
       photo: img,
     },
     {
       date: "01.02.23",
       linkUrl: "http://google.com/",
-      name: "Hawaiian party",
+      name: "Client Care Plans",
       photo: img,
     },
   ];
 
   useEffect(() => {
-    document
-      .querySelectorAll(".events-accordion_item__container")[0]
-      .classList.add("accordion_item__content-open");
-    document
-      .querySelectorAll(".events-accordion_item")[0]
-      .classList.add("accordion_item-open");
-  });
+    const accordion = document.querySelector(".accordion");
+    toggleAccordion(document.querySelector(".accordion"));
+    if (accordion) {
+      accordion.addEventListener("click", (e) => {
+        const activePanel = e.target.closest(".accordion-panel");
+        if (!activePanel) return;
+        toggleAccordion(activePanel);
+      });
+    }
 
-  const handleClick = (e: React.SyntheticEvent) => {
-    document
-      .querySelectorAll(".events-accordion_item__container")
-      .forEach((item: any) => {
-        item.classList.remove("accordion_item__content-open");
+    function toggleAccordion(panelToActivate: any) {
+      const buttons = panelToActivate.parentElement.querySelectorAll("button");
+      const contents =
+        panelToActivate.parentElement.querySelectorAll(".accordion-content");
+
+      buttons.forEach((button: any) => {
+        button.setAttribute("aria-expanded", false);
       });
 
-    document.querySelectorAll(".events-accordion_item").forEach((item): any => {
-      item.classList.remove("accordion_item-open");
-    });
+      contents.forEach((content: any) => {
+        content.setAttribute("aria-hidden", true);
+      });
 
-    console.log(e.currentTarget.nextElementSibling);
+      panelToActivate
+        .querySelector("button")
+        .setAttribute("aria-expanded", true);
 
-    e.currentTarget
-      .querySelector(".events-accordion_item__container")
-      ?.classList.add("accordion_item__content-open");
-
-    console.log(e.currentTarget.parentNode);
-    e.currentTarget.classList.add("accordion_item-open");
-  };
+      panelToActivate
+        .querySelector(".accordion-content")
+        .setAttribute("aria-hidden", false);
+    }
+  });
 
   return (
-    <div className="events-accordion_container">
+    <div className="accordion">
       {eventsList.map((item: IEventItem, intex: number): any => {
         return (
-          <div className={`events-accordion_item`} onClick={handleClick}>
-            <div className="events-accordion_tab">
-              <div className="events-accordion_tab__name">{item.name}</div>
-              <div className="events-accordion_tab__number">
-                {`0${intex + 1}`}
-              </div>
+          <div className="accordion-panel">
+            <div id="panel-heading">
+              <button
+                className="accordion-trigger"
+                aria-controls="panel-content"
+                aria-expanded="true"
+              >
+                {item.name}
+              </button>
+              <div className="accordion-number">{`0${intex + 1}`}</div>
             </div>
             <div
-              className={`events-accordion_item__container `}
-              style={{
-                backgroundImage: `url('${item.photo}')`,
-                backgroundRepeat: "no-repeat",
-                backgroundSize: "cover",
-              }}
+              className="accordion-content"
+              id="panel-content"
+              aria-labelledby="panel-heading"
+              aria-hidden="false"
+              role="region"
             >
-              <div className="events-accordion_item__content">
-                <div className="events-accordion_item__digit">
-                  {`0${intex + 1}`}
-                </div>
-                <div className="events-accordion_item__meta">
-                  <h3 className="events-accordion_item__name">{item.name}</h3>
-                  <div className="events-accordion_item__date">{item.date}</div>
-                  <a href="#" className="events-accordion_item__link">
-                    More information
-                  </a>
-                </div>
+              <div className="events-accordion_item__meta">
+                <h3 className="events-accordion_item__name">{item.name}</h3>
+                <div className="events-accordion_item__date">{item.date}</div>
+                <a href="#" className="events-accordion_item__link">
+                  More information
+                </a>
               </div>
+              <img
+                className="accordion-image"
+                src={item.photo}
+                alt="A sailboat at sea during sunset"
+              />
             </div>
           </div>
         );
