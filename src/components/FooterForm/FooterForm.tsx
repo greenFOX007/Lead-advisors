@@ -26,9 +26,12 @@ export default function FooterForm() {
       setFormErr(false);
       try {
         setIsLoading(true);
-        let res = await axios.post("http://localhost:3001/send-email/", {
-          email: value,
-        });
+        let res = await axios.post(
+          "https://testprojectserver-production.up.railway.app/send-email/",
+          {
+            email: value,
+          }
+        );
         if (res.status == 200) {
           setIsLoading(false);
           setValue("");
