@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./Timer.css";
 import { calculateTimeLeft } from "../../utils/calculateTimeLeft";
 import { formatTime } from "../../utils/formatTime";

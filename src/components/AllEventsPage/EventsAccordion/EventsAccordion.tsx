@@ -1,4 +1,4 @@
-import { ReactNode, useEffect } from "react";
+import { useEffect } from "react";
 import "./EventsAccordion.css";
 import img from "../../../assets/accordionPhoto.png";
 
